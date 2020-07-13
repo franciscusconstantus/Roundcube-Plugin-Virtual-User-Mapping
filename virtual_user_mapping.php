@@ -84,7 +84,7 @@ class virtual_user_mapping extends rcube_plugin
 
             if ($loginPass === $loginData[self::LOGIN_DATA_PASS]) {
                 $this->writeLog('7 | pass is equal: ' . $loginData[self::LOGIN_DATA_USER]);
-                $loginData[self::LOGIN_DATA_USER] = $dataRealAccount;
+                $loginData[self::LOGIN_DATA_USER] = $dataRealAccount.'@'.$dataDomain;
                 $loginData[self::LOGIN_DATA_PASS] = $realPass;
             } else {
                 $this->writeLog('6 | pass not equal virtualconfig/user input');
